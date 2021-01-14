@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.llk.shop_api.dao.BrandDao">
+
+    <select id="selectDataCount" resultType="java.lang.Long">
+      select count(*) from s_brand where 2=2
+        <if test="name!=null and name!=''">
+            and name=#{name}
+        </if>
+        <if test="first!=null and first!=''">
+            and first=#{first}
+        </if>
+
+    </select>
+
+    <select id="getBrandData" parameterType="com.llk.shop_api.model.vo.BrandPamas" resultType="com.llk.shop_api.model.po.Brand">
+        select * from s_brand where 2=2
+        <if test="name!=null and name!=''">
+            and name=#{name}
+        </if>
+        <if test="first!=null and first!=''">
+            and first=#{first}
+        </if>
+        limit ${size*(page-1)},#{size}
+    </select>
+
+    <insert id="addBrand" parameterType="com.llk.shop_api.model.po.Brand">
+        insert into s_brand
+        (name,first,imgPath,brandDesc,ord,isDel,createDate,updateDate,author)
+        value
+        (#{name},#{first},#{imgPath},#{brandDesc},#{ord},#{isDel},#{createDate},#{updateDate},#{author})
+
+    </insert>
+
+    <update id="updateBrand" parameterType="com.llk.shop_api.model.po.Brand">
+        update s_brand set
+          name = #{name},first = #{first},imgPath = #{imgPath},brandDesc = #{brandDesc},ord = #{ord},isDel = #{isDel}
+          where id = #{id}
+    </update>
+
+
+</mapper>
