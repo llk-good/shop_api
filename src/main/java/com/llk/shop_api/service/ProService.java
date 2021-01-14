@@ -11,4 +11,6 @@ public interface ProService {
     Map getAllData(PropPamas pamas);
 
     void addProp(Property pro);
+
+    void updateData(Property pro);
 }

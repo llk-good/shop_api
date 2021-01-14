@@ -33,4 +33,22 @@
         (#{name},#{nameCH},#{color},#{colorCH},#{typeId},#{type},#{isSKU},#{isDel},#{createDate},#{updateDate},#{author})
     </insert>
 
+    <update id="updateData">
+        update s_prop set name=#{name},nameCH=#{nameCH},color=#{color},colorCH=#{colorCH},typeId=#{typeId}
+        ,type=#{type},isSKU=#{isSKU},isDel=#{isDel},isSKU=#{isSKU},updateDate=#{updateDate} where id = #{id}
+    </update>
+
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

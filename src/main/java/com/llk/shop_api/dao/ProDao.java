@@ -13,4 +13,6 @@ public interface ProDao {
     List<Property> queryDataAll(PropPamas pamas);
 
     void addProp(Property pro);
+
+    void updateData(Property pro);
 }

@@ -65,5 +65,10 @@ post请求
 返回值     {code:"",message:""}
     * */
 
+    @PostMapping("update")
+    private ResultData updateData(Property pro){
+        proService.updateData(pro);
+        return ResultData.success("");
+    }
 
 }

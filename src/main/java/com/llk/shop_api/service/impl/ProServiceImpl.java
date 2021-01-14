@@ -37,4 +37,10 @@ public class ProServiceImpl implements ProService {
         pro.setAuthor("test");
         proDao.addProp(pro);
     }
+
+    @Override
+    public void updateData(Property pro) {
+        pro.setUpdateDate(new Date());
+        proDao.updateData(pro);
+    }
 }
