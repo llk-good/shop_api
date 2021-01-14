@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.llk.shop_api.dao.ProDao">
+
+    <select id="queryDataCount" resultType="java.lang.Long">
+      select count(*) from s_prop where 2=2
+        <if test="name!=null and name!=''">
+            and name=#{name}
+        </if>
+        <if test="nameCH!=null and nameCH!=''">
+            and nameCH=#{nameCH}
+        </if>
+
+
+    </select>
+
+    <select id="queryDataAll" parameterType="com.llk.shop_api.model.vo.PropPamas" resultType="com.llk.shop_api.model.po.Property">
+        select * from s_prop where 2=2
+        <if test="name!=null and name!=''">
+            and name=#{name}
+        </if>
+        <if test="nameCH!=null and nameCH!=''">
+            and nameCH=#{nameCH}
+        </if>
+        limit ${size*(page-1)},#{size}
+    </select>
+
+
+
+</mapper>
