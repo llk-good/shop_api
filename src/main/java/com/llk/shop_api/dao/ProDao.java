@@ -11,4 +11,6 @@ public interface ProDao {
     Long queryDataCount(PropPamas pamas);
 
     List<Property> queryDataAll(PropPamas pamas);
+
+    void addProp(Property pro);
 }

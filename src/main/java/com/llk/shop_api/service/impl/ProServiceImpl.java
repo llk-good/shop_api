@@ -7,6 +7,7 @@ import com.llk.shop_api.service.ProService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,5 +28,13 @@ public class ProServiceImpl implements ProService {
         List<Property> list = proDao.queryDataAll(pamas);
         map.put("list",list);
         return map;
+    }
+
+    @Override
+    public void addProp(Property pro) {
+        pro.setCreateDate(new Date());
+        pro.setUpdateDate(new Date());
+        pro.setAuthor("test");
+        proDao.addProp(pro);
     }
 }

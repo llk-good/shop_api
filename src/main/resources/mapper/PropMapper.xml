@@ -28,6 +28,9 @@
         limit ${size*(page-1)},#{size}
     </select>
 
-
+    <insert id="addProp" parameterType="com.llk.shop_api.model.po.Property">
+        insert into s_prop (name,nameCH,color,colorCH,typeId,type,isSKU,isDel,createDate,updateDate,author) value
+        (#{name},#{nameCH},#{color},#{colorCH},#{typeId},#{type},#{isSKU},#{isDel},#{createDate},#{updateDate},#{author})
+    </insert>
 
 </mapper>

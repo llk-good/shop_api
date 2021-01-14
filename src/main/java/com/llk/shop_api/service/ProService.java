@@ -9,4 +9,6 @@ import java.util.Map;
 public interface ProService {
 
     Map getAllData(PropPamas pamas);
+
+    void addProp(Property pro);
 }
