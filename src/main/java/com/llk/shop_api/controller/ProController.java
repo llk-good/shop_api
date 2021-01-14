@@ -55,6 +55,17 @@ post请求
         return ResultData.success("");
     }
 
+/*
+* ById
+*
+* get
+*
+* */
+    @GetMapping("ById")
+    public ResultData selectDataById(Integer id){
+        List<Property> list = proService.selectDataById(id);
+        return ResultData.success(list);
+    }
 
     /*
     *

@@ -43,4 +43,9 @@ public class ProServiceImpl implements ProService {
         pro.setUpdateDate(new Date());
         proDao.updateData(pro);
     }
+
+    @Override
+    public List<Property> selectDataById(Integer id) {
+        return proDao.selectDataById(id);
+    }
 }

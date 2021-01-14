@@ -13,4 +13,6 @@ public interface ProService {
     void addProp(Property pro);
 
     void updateData(Property pro);
+
+    List<Property> selectDataById(Integer id);
 }
