@@ -13,10 +13,6 @@ public class Property {
 
     private String nameCH;
 
-    private String color;
-
-    private String colorCH;
-
     private Integer typeId;
 
     private int type;
@@ -58,22 +54,6 @@ public class Property {
 
     public void setNameCH(String nameCH) {
         this.nameCH = nameCH;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getColorCH() {
-        return colorCH;
-    }
-
-    public void setColorCH(String colorCH) {
-        this.colorCH = colorCH;
     }
 
     public Integer getTypeId() {

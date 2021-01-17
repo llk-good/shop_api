@@ -5,13 +5,16 @@ import com.llk.shop_api.model.vo.BrandPamas;
 import com.llk.shop_api.model.vo.ResultData;
 import com.llk.shop_api.service.BrandService;
 import com.llk.shop_api.utils.FileInput;
+import com.llk.shop_api.utils.OssFileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("api/brand/")
@@ -86,5 +89,14 @@ get请求
         return ResultData.success(imgages);
     }
 
-
+    @RequestMapping("uploadFile")
+    public ResultData uploadFile(MultipartFile file) throws IOException {
+        //处理新名称
+        String originalFilename = file.getOriginalFilename();
+        //防止中文引起的错误
+        String newName= UUID.randomUUID().toString()+originalFilename.substring(originalFilename.lastIndexOf("."));
+        //存储路径
+        newName="imgs/"+newName;
+        return ResultData.success(OssFileUtils.uploadFile(file.getInputStream(),newName));
+    }
 }
