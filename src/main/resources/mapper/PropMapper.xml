@@ -6,10 +6,8 @@
 <mapper namespace="com.llk.shop_api.dao.ProDao">
 
     <select id="queryDataCount" resultType="java.lang.Long">
-      select count(*) from s_prop where 2=2
-        <if test="name!=null and name!=''">
-            and name=#{name}
-        </if>
+      select count(*) from s_Prop pr left join s_type ty on pr.typeId = ty.id where 2=2
+
         <if test="nameCH!=null and nameCH!=''">
             and nameCH=#{nameCH}
         </if>
@@ -18,10 +16,9 @@
     </select>
 
     <select id="queryDataAll" parameterType="com.llk.shop_api.model.vo.PropPamas" resultType="com.llk.shop_api.model.po.Property">
-        select * from s_prop where 2=2
-        <if test="name!=null and name!=''">
-            and name=#{name}
-        </if>
+        select pr.id,pr.nameCH as name,ty.name as typeName,pr.isSKU,pr.type
+        from s_Prop pr left join s_type ty on pr.typeId = ty.id where 2=2
+
         <if test="nameCH!=null and nameCH!=''">
             and nameCH=#{nameCH}
         </if>
@@ -29,12 +26,12 @@
     </select>
 
     <insert id="addProp" parameterType="com.llk.shop_api.model.po.Property">
-        insert into s_prop (name,nameCH,color,colorCH,typeId,type,isSKU,isDel,createDate,updateDate,author) value
-        (#{name},#{nameCH},#{color},#{colorCH},#{typeId},#{type},#{isSKU},#{isDel},#{createDate},#{updateDate},#{author})
+        insert into s_prop (name,nameCH,typeId,type,isSKU,isDel,createDate,updateDate,author) value
+        (#{name},#{nameCH},#{typeId},#{type},#{isSKU},#{isDel},#{createDate},#{updateDate},#{author})
     </insert>
 
     <update id="updateData">
-        update s_prop set name=#{name},nameCH=#{nameCH},color=#{color},colorCH=#{colorCH},typeId=#{typeId}
+        update s_prop set name=#{name},nameCH=#{nameCH},typeId=#{typeId}
         ,type=#{type},isSKU=#{isSKU},isDel=#{isDel},isSKU=#{isSKU},updateDate=#{updateDate} where id = #{id}
     </update>
 
