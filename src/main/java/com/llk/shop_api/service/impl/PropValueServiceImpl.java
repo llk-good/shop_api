@@ -24,4 +24,9 @@ public class PropValueServiceImpl implements PropValueService {
     public void add(PropValue prop) {
         propValueDao.add(prop);
     }
+
+    @Override
+    public void update(PropValue prop) {
+        propValueDao.update(prop);
+    }
 }

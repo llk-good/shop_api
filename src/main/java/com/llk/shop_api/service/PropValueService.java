@@ -8,4 +8,6 @@ public interface PropValueService {
     List<PropValue> getDataByPid(Integer propid);
 
     void add(PropValue prop);
+
+    void update(PropValue prop);
 }

@@ -28,4 +28,10 @@ public class PropValueController {
         return ResultData.success("");
     }
 
+    @PostMapping("update")
+    public ResultData update(PropValue prop){
+        propValueService.update(prop);
+        return ResultData.success("");
+    }
+
 }
