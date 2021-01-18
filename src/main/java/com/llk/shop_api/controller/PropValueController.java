@@ -19,7 +19,7 @@ public class PropValueController {
     @GetMapping("getData")
     public ResultData getData(Integer propid){
         List<PropValue> list = propValueService.getDataByPid(propid);
-        return ResultData.success("");
+        return ResultData.success(list);
     }
 
     @PostMapping("add")

@@ -10,6 +10,16 @@ public class PropValue {
 
     private Integer propId;
 
+    private int isDel;
+
+    public int getIsDel() {
+        return isDel;
+    }
+
+    public void setIsDel(int isDel) {
+        this.isDel = isDel;
+    }
+
     public Integer getId() {
         return id;
     }

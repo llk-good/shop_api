@@ -10,12 +10,12 @@ import java.util.List;
 
 @Mapper
 public interface PropValueDao {
-    @Select("select * from s_propvalue where propid = #{propid}")
+    @Select("select * from s_propvalue where propId = #{propid}")
     List<PropValue> getDataByPid(Integer propid);
 
     @Insert("insert into s_propvalue (name,nameCH,propId) value (#{name},#{nameCH},#{propId})")
     void add(PropValue prop);
 
-    @Update("update s_propvalue set name = #{name},nameCH = #{nameCH},propId = #{propId} where id = #{id}")
+    @Update("update s_propvalue set name = #{name},nameCH = #{nameCH},propId = #{propId},isDel=#{isDel} where id = #{id}")
     void update(PropValue prop);
 }
