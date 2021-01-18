@@ -22,6 +22,7 @@ public class PropValueServiceImpl implements PropValueService {
 
     @Override
     public void add(PropValue prop) {
+        prop.setIsDel(0);
         propValueDao.add(prop);
     }
 
