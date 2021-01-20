@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.llk.shop_api.dao.ProductDao">
+
+    <insert id="addProd" parameterType="com.llk.shop_api.dao.ProductDao">
+        insert into s_product (name,title,bandId,typeId,productdecs,price,imgPath,stocks,sortNum,createDate,updateDate,author,isDel)
+        value
+        (#{name},#{title},#{bandId},#{typeId},#{productdecs},#{price},#{imgPath},#{stocks},#{sortNum},#{createDate},#{updateDate},#{author},#{isDel})
+
+    </insert>
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

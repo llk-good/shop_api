@@ -4,9 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-public class Show {
-
-
+public class Product {
     private Integer id;// 主键
 
     private String name;//  名称
@@ -15,13 +13,17 @@ public class Show {
 
     private Integer bandId;//  品牌id
 
+    private Integer typeId; //分类id
+
     private String productdecs;//  商品介绍
 
-    private Integer price;//   价格
+    private int price;//   价格
 
-    private Integer stocks;//  库存
+    private String imgPath;//   主图
 
-    private Integer sortNum;//  排许
+    private int stocks;//  库存
+
+    private int sortNum;//  排许
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;//
@@ -31,7 +33,7 @@ public class Show {
 
     private String  author;//
 
-    private Integer isDel;//  是否删除
+    private int isDel;//  是否删除
 
     public Integer getId() {
         return id;
@@ -65,6 +67,14 @@ public class Show {
         this.bandId = bandId;
     }
 
+    public Integer getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
     public String getProductdecs() {
         return productdecs;
     }
@@ -73,27 +83,35 @@ public class Show {
         this.productdecs = productdecs;
     }
 
-    public Integer getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public Integer getStocks() {
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
+    public int getStocks() {
         return stocks;
     }
 
-    public void setStocks(Integer stocks) {
+    public void setStocks(int stocks) {
         this.stocks = stocks;
     }
 
-    public Integer getSortNum() {
+    public int getSortNum() {
         return sortNum;
     }
 
-    public void setSortNum(Integer sortNum) {
+    public void setSortNum(int sortNum) {
         this.sortNum = sortNum;
     }
 
@@ -121,11 +139,11 @@ public class Show {
         this.author = author;
     }
 
-    public Integer getIsDel() {
+    public int getIsDel() {
         return isDel;
     }
 
-    public void setIsDel(Integer isDel) {
+    public void setIsDel(int isDel) {
         this.isDel = isDel;
     }
 }
