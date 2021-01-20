@@ -1,11 +1,12 @@
 package com.llk.shop_api.service;
 
 import com.llk.shop_api.model.po.Product;
+import com.llk.shop_api.model.vo.ProdPamas;
 
-import java.util.List;
+import java.util.Map;
 
 public interface ProductService {
-    List<Product> queryProd();
+    Map queryProd(ProdPamas pamas);
 
     void addProd(Product product);
 }

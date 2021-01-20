@@ -2,12 +2,15 @@ package com.llk.shop_api.service.impl;
 
 import com.llk.shop_api.dao.ProductDao;
 import com.llk.shop_api.model.po.Product;
+import com.llk.shop_api.model.vo.ProdPamas;
 import com.llk.shop_api.service.ProductService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -17,8 +20,15 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public List<Product> queryProd() {
-        return null;
+    public Map queryProd(ProdPamas pamas) {
+        Map map = new HashMap();
+        Long count = productDao.queryProdCount(pamas);
+        map.put("count",count);
+
+        List<Product> list = productDao.queryProdData(pamas);
+        map.put("list",list);
+
+        return map;
     }
 
     @Override
