@@ -10,4 +10,5 @@ public interface PropValueService {
     void add(PropValue prop);
 
     void update(PropValue prop);
+
 }

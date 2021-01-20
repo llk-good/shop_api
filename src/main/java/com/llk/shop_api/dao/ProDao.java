@@ -17,6 +17,6 @@ public interface ProDao {
 
     void updateData(Property pro);
 
-    @Select("select * from s_prop where id = #{id}")
+    @Select("select * from s_prop where typeid = #{id}")
     List<Property> selectDataById(Integer id);
 }

@@ -22,6 +22,6 @@ public interface TypeDao {
     @Select("select * from s_type where id = #{id}")
     List<Type> updateById(Integer id);
 
-    @Update("update s_type set name=#{name},pid=#{pid},updateDate=#{updateDate},isDel=#{isDel} where id = #{id}")
+    @Update("update s_type set name=#{name},updateDate=#{updateDate},isDel=#{isDel} where id = #{id}")
     void updateType(Type type);
 }

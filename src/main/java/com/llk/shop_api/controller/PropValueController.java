@@ -16,9 +16,9 @@ public class PropValueController {
     @Resource
     private PropValueService propValueService;
 
-    @GetMapping("getData")
-    public ResultData getData(Integer propid){
-        List<PropValue> list = propValueService.getDataByPid(propid);
+    @GetMapping("getDataByPid")
+    public ResultData getData(Integer pid){
+        List<PropValue> list = propValueService.getDataByPid(pid);
         return ResultData.success(list);
     }
 
@@ -33,5 +33,6 @@ public class PropValueController {
         propValueService.update(prop);
         return ResultData.success("");
     }
+
 
 }

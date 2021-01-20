@@ -83,11 +83,11 @@ get请求
      * 路径：http://localhost:8080/car/upload
      * 请求方式：post
      * */
-    @PostMapping("upload")
+    /*@PostMapping("upload")
     public ResultData upload(MultipartFile file, HttpServletRequest request){
         String imgages = FileInput.saveFile(file, "images", request);
         return ResultData.success(imgages);
-    }
+    }*/
 
     @RequestMapping("uploadFile")
     public ResultData uploadFile(MultipartFile file) throws IOException {

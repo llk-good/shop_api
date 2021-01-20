@@ -30,4 +30,6 @@ public class PropValueServiceImpl implements PropValueService {
     public void update(PropValue prop) {
         propValueDao.update(prop);
     }
+
+
 }
