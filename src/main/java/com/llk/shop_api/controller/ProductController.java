@@ -21,6 +21,8 @@ public class ProductController {
     private ProductService productService;
 
 
+
+
     /*
      * 新增
      *
@@ -29,8 +31,8 @@ public class ProductController {
      * 请求方式： post
      * */
     @PostMapping("add")
-    public ResultData addProd(Product product){
-        productService.addProd(product);
+    public ResultData addProd(Product product, String attr, String sku){
+        productService.addProd(product,attr,sku);
         return ResultData.success("");
     }
 
@@ -47,4 +49,13 @@ public class ProductController {
         Map list = productService.queryProd(pamas);
         return ResultData.success(list);
     }
+
+
+
+    @PostMapping("update")
+    public ResultData update(Product prod){
+        productService.upadte(prod);
+        return ResultData.success("");
+    }
+
 }

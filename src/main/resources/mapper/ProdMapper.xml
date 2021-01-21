@@ -5,7 +5,7 @@
 
 <mapper namespace="com.llk.shop_api.dao.ProductDao">
 
-    <insert id="addProd" parameterType="com.llk.shop_api.dao.ProductDao">
+    <insert id="addProd" parameterType="com.llk.shop_api.dao.ProductDao" useGeneratedKeys="true" keyProperty="id">
         insert into s_product (name,title,bandId,typeId,productdecs,price,imgPath,stocks,sortNum,createDate,updateDate,author,isDel)
         value
         (#{name},#{title},#{bandId},#{typeId},#{productdecs},#{price},#{imgPath},#{stocks},#{sortNum},#{createDate},#{updateDate},#{author},#{isDel})
@@ -33,6 +33,13 @@
         </if>
         limit ${(page-1)*size},#{size}
     </select>
+
+    <update id="upate">
+        update s_product set name = #{name},title = #{title},bandId = #{bandId},
+        typeId = #{typeId},productdecs = #{productdecs},price = #{price},imgPath = #{imgPath},
+        stocks = #{stocks},sortNum = #{sortNum},author = #{author},isDel = #{isDel},updateDate = #{updateDate}
+        where id = #{id}
+    </update>
 
 </mapper>
 

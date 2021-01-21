@@ -13,4 +13,6 @@ public interface ProductDao {
     Long queryProdCount(ProdPamas pamas);
 
     List<Product> queryProdData(ProdPamas pamas);
+
+    void upate(Product prod);
 }

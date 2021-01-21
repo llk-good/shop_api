@@ -8,5 +8,8 @@ import java.util.Map;
 public interface ProductService {
     Map queryProd(ProdPamas pamas);
 
-    void addProd(Product product);
+    void addProd(Product product, String attr, String sku);
+
+    void upadte(Product prod);
+
 }
